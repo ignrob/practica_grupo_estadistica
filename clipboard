@@ -1,1 +1,16 @@
 Aquí poner lo que sea
+
+#########
+Leer CSV
+#########
+data<-read.csv("CdP_estadistica.csv",header=TRUE)
+dataVerano<-subset(data,as.Date(data$date)>=as.Date("2014-07-01") & as.Date(data$date)<=as.Date("2014-09-30") | as.Date(data$date)>=as.Date("2015-07-01") & as.Date(data$date)<=as.Date("2015-09-30"))
+length(dataVerano$AVG.Temp.)
+
+#########
+Datos Estadísticos
+#########
+tempMedia<-mean(dataVerano$AVG.Temp.)
+tempSD<-sd(dataVerano$AVG.Temp.)
+tempNum<-length(dataVerano$AVG.Temp.)
+tempVar<-var(dataVerano$AVG.Temp.)
